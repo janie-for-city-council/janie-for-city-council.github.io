@@ -7,7 +7,7 @@ import SEO from '../components/seo';
 import { buildTranslator } from '../lib/i18n';
 import styles from './index.module.css';
 
-export default () => {
+export default (props) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "family.png" }) {
@@ -19,9 +19,9 @@ export default () => {
       }
     }
   `);
-  const t = useMemo(() => buildTranslator('home'), []);
+  const t = useMemo(() => buildTranslator(props.pageContext.locale, 'home'), [props.pageContext.locale]);
   return (
-    <Layout>
+    <Layout locale={props.pageContext.locale}>
       <SEO title={t('title')} />
       <div className={styles.meetJanie}>{t('meetJanie')}</div>
       <div className={styles.mainAboutContainer}>

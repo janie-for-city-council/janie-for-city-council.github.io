@@ -11,10 +11,10 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, locale }) => {
   return (
     <>
-      <Header />
+      <Header locale={locale} />
       <div>
         <main>{children}</main>
         <footer>

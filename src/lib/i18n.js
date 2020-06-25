@@ -1,59 +1,40 @@
 import locales from '../locales/locales';
-export const getCurrentLocale = () => {
-    let locale = null;
-    const localeKeys = Object.keys(locales);
-    for(const key of localeKeys) {
-        if (window.location.pathname.startsWith(`/${key}/`) || window.location.pathname === `/${key}`) {
-            locale = key;
-            break;
-        }
-        else if(locales[key].default) {
-            locale = key;
-        }
-    }
-    return locale;
-};
 
 export const getDesiredLocale = () => {
     return window.localStorage.getItem('locale');
 };
 
-export const getBasePath = () => {
-    const locale = getCurrentLocale();
-    if(window.location.pathname.startsWith(`/${locale}/`)) {
-        return window.location.pathname.substr(locale.length+1);
+export const getBasePath = (locale, pathname) => {
+    if(pathname.startsWith(`/${locale}/`)) {
+        return pathname.substr(locale.length+1);
     }
-    else if(window.location.pathname === `/${locale}`) {
+    else if(pathname === `/${locale}`) {
         return '/';
     }
-    return window.location.pathname;
+    return pathname;
 };
 
-export const getLocalizedPath = (path, locale) => {
-    locale = locale || getCurrentLocale();
-    return locales[locale].default ? path : `/${locale}${path}`;
+export const getLocalizedPath = (locale, pathname) => {
+    return locales[locale].default ? pathname : `/${locale}${pathname}`;
 };
 
-export const changeLocale = (locale) => {
+export const changeLocale = (locale, pathname) => {
     window.localStorage.setItem('locale', locale);
-    window.location = getLocalizedPath(getBasePath(), locale);
+    window.location = getLocalizedPath(locale, pathname);
 };
 
-const dl = getDesiredLocale();
-const l = getCurrentLocale();
-if(dl && l !== dl) {
-    changeLocale(dl);
-}
+export const init = (locale) => {
+    const dl = getDesiredLocale();
+    if(dl && locale !== dl) {
+        changeLocale(dl);
+    }
+};
 
-export const i18n = {
-    locale: l,
-}
-
-export const buildTranslator = (namespace) => (key) => {
-    if (i18n.locale in locales) {
-        if(namespace in locales[i18n.locale].translations) {
-            if(key in locales[i18n.locale].translations[namespace]) {
-                return locales[i18n.locale].translations[namespace][key];
+export const buildTranslator = (locale, namespace) => (key) => {
+    if (locale in locales) {
+        if(namespace in locales[locale].translations) {
+            if(key in locales[locale].translations[namespace]) {
+                return locales[locale].translations[namespace][key];
             }
             else {
                 return `__unknown_key_${key}__`;
@@ -63,5 +44,5 @@ export const buildTranslator = (namespace) => (key) => {
             return `__unknown_namespace_${namespace}__`;
         }
     }
-    return `__unknown_locale_${i18n.locale}__`;
+    return `__unknown_locale_${locale}__`;
 }
