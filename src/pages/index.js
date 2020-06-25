@@ -1,22 +1,40 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useMemo } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { buildTranslator } from '../lib/i18n';
+import styles from './index.module.css';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
-
-export default IndexPage
+export default () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "family.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 545) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+  const t = useMemo(() => buildTranslator('home'), []);
+  return (
+    <Layout>
+      <SEO title={t('title')} />
+      <div className={styles.meetJanie}>{t('meetJanie')}</div>
+      <div className={styles.mainAboutContainer}>
+        <div className={styles.mainAboutText}>
+          <h3>Janie Seguí Rodriguez - Candidate for City Council in Pawtucket’s Ward 5 District</h3>
+          <strong>{t('background')}</strong>
+          <p>{t('aboutP1')}</p>
+          <p>{t('aboutP2')}</p>
+          <p>{t('aboutP3')}</p>
+          <p>{t('aboutP4')} <strong>{t('aboutP4Strong')}</strong></p>
+        </div>
+        <Img className={styles.familyImage} fluid={data.placeholderImage.childImageSharp.fluid} />
+      </div>
+    </Layout>
+  );
+};

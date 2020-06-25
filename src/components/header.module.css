@@ -19,13 +19,15 @@
 .bars {
     margin-left: 2rem;
     cursor: pointer;
+    background: transparent;
+    border: 0;
 }
 
 .links {
     display: none;
 }
 
-.links a {
+.links a, .switchLanguage {
     text-transform: uppercase;
     margin: 0 0.5rem;
     color: #fff;
@@ -35,11 +37,13 @@
     text-decoration: none;
     padding: 0.6rem 0.5rem 0.5rem 0.5rem;
     padding: 1rem;
-    border-radius: 5px;
     text-align: center;
+    background-color: transparent;
+    border: 0;
+    border-radius: 5px;
 }
 
-.links a:hover {
+.links a:hover, .switchLanguage:hover {
     background-color: #556884;
 }
 
@@ -67,6 +71,8 @@
     position: absolute;
     right: 1rem;
     top: 1rem;
+    background: transparent;
+    border: 0;
 }
 
 .overlay {
@@ -89,6 +95,12 @@
     margin-bottom: 1rem;
 }
 
+.switchLanguage {
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
 .overlay.links .linksList {
     display: flex;
     flex-direction: column;
@@ -109,7 +121,7 @@
 }
 
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 750px) {
     .links {
         display: flex;
         justify-content: flex-end;
@@ -129,7 +141,7 @@
     }
 }
 
-@media only screen and (min-width: 1010px) {
+@media only screen and (min-width: 1200px) {
     .links a:not(.big) {
         display: block;
     }
