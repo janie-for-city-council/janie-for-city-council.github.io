@@ -37,7 +37,7 @@ const Header = ({ locale }) => {
             <button className={styles.menuClose} onClick={() => setMenuOpen(false)}>
               <FontAwesomeIcon icon={faTimes} size="2x" color="white" />
             </button>
-            <Link to="/contribute" className={c(styles.big, styles.contribute)} locale={locale}>{t('contribute')}</Link>
+            <Link to="https://secure.actblue.com/donate/seguirodriguezward5" className={c(styles.big, styles.contribute)} locale={locale}>{t('contribute')}</Link>
             <Link to="/about" locale={locale}>{t('about')}</Link>
             <Link to="/issues" locale={locale}>{t('issues')}</Link>
             <Link to="/news" locale={locale}>{t('news')}</Link>

@@ -8,25 +8,79 @@
 
 h3 {
     font-style: italic;
+    margin-top: 0;
 }
 
 p {
     font-size: 16px;
+    line-height: 1.5;
+    margin-top: 0;
 }
 
-.mainAboutContainer {
-    margin: 1rem auto;
+.row {
+    margin: 2rem auto;
     padding: 0 1rem;
     max-width: 34.125rem;
 }
 
-.mainAboutText {
-    margin-right: 1rem;
+.cell1x {
+    display: block;
 }
 
-.familyImage {
-    display: block;
-    float: right;
-    width: 546px;
-    height: 545px;
+.quoteContainer {
+    background: #0C0C0C;
+}
+
+.quote {
+    align-items: center;
+}
+
+.quoteImage {
+    overflow: hidden;
+}
+
+.quoteText {
+    padding: 1rem 2rem;
+    font-size: 22px;
+    color: #E6E6E6;
+    line-height: 1.4;
+}
+
+@media only screen and (min-width: 52rem) {
+    .row {
+        display: flex;
+        flex-direction: row;
+        max-width: 52rem;
+    }
+
+    .row div {
+        margin-right: 1rem;
+    }
+
+    .row div:last-child {
+        margin-right: 0;
+    }
+    .cell1x {
+        width: 546px;
+        height: 545px;
+    }
+    .cell2x {
+        width: 34.125rem;
+    }
+
+    .quote {
+        display: flex;
+        flex-direction: row-reverse;
+        max-width: 987px;
+        margin: 0 auto;
+    }
+
+    .quoteImage {
+        flex: 1;
+        max-height: 410px;
+    }
+    
+    .quoteText {
+        flex: 1;
+    }
 }

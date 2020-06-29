@@ -10,9 +10,23 @@ import styles from './index.module.css';
 export default (props) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "family.png" }) {
+      family: file(relativePath: { eq: "family.jpg" }) {
+        childImageSharp {
+          fluid(maxHeight: 960) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      janie1: file(relativePath: { eq: "janie1.png" }) {
         childImageSharp {
           fluid(maxHeight: 545) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      janie2: file(relativePath: { eq: "janie2.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 410) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -24,16 +38,31 @@ export default (props) => {
     <Layout locale={props.pageContext.locale}>
       <SEO title={t('title')} />
       <div className={styles.meetJanie}>{t('meetJanie')}</div>
-      <div className={styles.mainAboutContainer}>
-        <div className={styles.mainAboutText}>
-          <h3>Janie Seguí Rodriguez - Candidate for City Council in Pawtucket’s Ward 5 District</h3>
-          <strong>{t('background')}</strong>
+      <div className={styles.row}>
+        <div className={styles.cell2x}>
+          <h3>{t('backgroundIntro')}</h3>
+          <p><strong>{t('background')}</strong></p>
           <p>{t('aboutP1')}</p>
           <p>{t('aboutP2')}</p>
+        </div>
+        <Img className={styles.cell1x} fluid={data.family.childImageSharp.fluid} />
+      </div>
+      <div className={styles.row}>
+        <Img className={styles.cell1x} fluid={data.janie1.childImageSharp.fluid} />
+        <div className={styles.cell2x}>
           <p>{t('aboutP3')}</p>
           <p>{t('aboutP4')} <strong>{t('aboutP4Strong')}</strong></p>
         </div>
-        <Img className={styles.familyImage} fluid={data.placeholderImage.childImageSharp.fluid} />
+      </div>
+      <div className={styles.quoteContainer}>
+        <div className={styles.quote}>
+          <div className={styles.quoteText}>
+            "{t('quote')}"
+          </div>
+          <div className={styles.quoteImage}>
+            <Img fluid={data.janie2.childImageSharp.fluid} />
+          </div>
+        </div>
       </div>
     </Layout>
   );

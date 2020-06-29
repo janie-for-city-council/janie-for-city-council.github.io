@@ -18,12 +18,14 @@
             "home": {
                 "title": "Janie Lee Segui Rodriguez for Pawtucket City Council - Ward 5",
                 "meetJanie": "Meet Janie",
+                "backgroundIntro": "Janie Seguí Rodriguez - Candidate for City Council in Pawtucket’s Ward 5 District",
                 "background": "Background",
                 "aboutP1": "Today, I hold a master’s degree in community development from Roger Williams University. I manage the operations of a tri-state middle school career exploration program. I am an educator, community organizer, and political candidate. My journey here was a long one. I was born into poverty and experienced many of the hardships that continue to plague our community. Raised by a single mother, I lived in a low income neighborhood and attended a failing public school system. ",
                 "aboutP2": "I was 9 years old when my family's financial hardships became too much to bear. My mother reluctantly sent me and a couple of my siblings to live in rural Puerto Rico while she stayed behind to work. Being separated from my mother was incredibly difficult. It took me years to repair the gaps in my education and to feel whole again. Although I made impressive gains, the cycle of poverty is hard to escape.",
                 "aboutP3": "I lived in Prospect Heights housing with my daughters for almost 5 years while working exploitative jobs that didn’t pay a living wage. As an advocate and organizer, I began working with and on behalf of families like mine that wanted nothing more than an opportunity to succeed. I fell in love with the rich diversity, beautiful parks, historic mills, and strong people of Pawtucket.",
                 "aboutP4": "In 2018 I purchased my first home in the city. I aim to model for my two daughters, Destiny (12) and Kailani (5), that anything is possible. The truth is that it does not have to be this difficult for hardworking families to make ends meet. It’s more important than ever to elect candidates who will fight for excellent schools, small businesses, and investments in affordable housing. I’m running for City Council as a way to continue my advocacy for the people of Pawtucket.",
-                "aboutP4Strong": "Vote for Janie Seguí Rodriguez! Together we can build a better future for our children."
+                "aboutP4Strong": "Vote for Janie Seguí Rodriguez! Together we can build a better future for our children.",
+                "quote": "The truth is that it does not have to be this difficult for hardworking families to make ends meet. It’s more important than ever to elect candidates who will fight for excellent schools, small businesses, and investments in affordable housing"
             }
         }
     },
@@ -41,6 +43,9 @@
                 "vote": "Vota",
                 "volunteer": "Voluntariado",
                 "switchLanguage": "View in English"
+            },
+            "home": {
+
             }
         }
     }
