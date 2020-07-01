@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{idap:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),o=a.n(n),c=a("Bl7J"),l=a("vrFN"),i=a("sJyK");t.default=function(e){var t=Object(n.useMemo)((function(){return Object(i.a)(e.pageContext.locale,"covid19")}),[e.pageContext.locale]);return o.a.createElement(c.a,{locale:e.pageContext.locale,location:e.location},o.a.createElement(l.a,{title:t("title")}),o.a.createElement("h1",null,t("covid19")))}}}]);
+//# sourceMappingURL=component---src-pages-covid-19-js-908b58e1b43d0059b7a2.js.map

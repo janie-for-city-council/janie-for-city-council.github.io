@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{F9nr:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),l=a.n(n),o=a("Bl7J"),c=a("vrFN"),r=a("sJyK");t.default=function(e){var t=Object(n.useMemo)((function(){return Object(r.a)(e.pageContext.locale,"issues")}),[e.pageContext.locale]);return l.a.createElement(o.a,{locale:e.pageContext.locale,location:e.location},l.a.createElement(c.a,{title:t("title")}),l.a.createElement("h1",null,t("issues")))}}}]);
+//# sourceMappingURL=component---src-pages-issues-js-a89732252fb8a63e6bdc.js.map
