@@ -7,7 +7,7 @@ import { buildTranslator } from '../lib/i18n';
 export default (props) => {
   const t = useMemo(() => buildTranslator(props.pageContext.locale, 'issues'), [props.pageContext.locale]);
   return (
-    <Layout locale={props.pageContext.locale}>
+    <Layout locale={props.pageContext.locale} location={props.location}>
       <SEO title={t('title')} />
       <h1>{t('issues')}</h1>
     </Layout>

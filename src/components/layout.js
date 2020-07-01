@@ -12,8 +12,8 @@ import Header from "./header"
 import "./layout.css"
 import { init } from '../lib/i18n';
 
-const Layout = ({ children, locale }) => {
-  init(locale);
+const Layout = ({ children, locale, location }) => {
+  init(locale, location.pathname);
   return (
     <>
       <Header locale={locale} />

@@ -23,12 +23,10 @@ export const changeLocale = (locale, pathname) => {
     window.location = getLocalizedPath(locale, pathname);
 };
 
-export const init = (locale) => {
-    console.log('init')
+export const init = (locale, pathname) => {
     const dl = getDesiredLocale();
-    console.log({ dl });
     if(dl && locale !== dl) {
-        changeLocale(dl, window.location.pathname);
+        changeLocale(dl, pathname);
     }
 };
 

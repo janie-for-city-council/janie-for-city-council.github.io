@@ -35,7 +35,7 @@ export default (props) => {
   `);
   const t = useMemo(() => buildTranslator(props.pageContext.locale, 'home'), [props.pageContext.locale]);
   return (
-    <Layout locale={props.pageContext.locale}>
+    <Layout locale={props.pageContext.locale} location={props.location}>
       <SEO title={t('title')} />
       <h1>{t('meetJanie')}</h1>
       <div className={styles.row}>
