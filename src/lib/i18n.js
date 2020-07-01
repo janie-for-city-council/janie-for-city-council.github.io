@@ -24,9 +24,11 @@ export const changeLocale = (locale, pathname) => {
 };
 
 export const init = (locale) => {
+    console.log('init')
     const dl = getDesiredLocale();
+    console.log({ dl });
     if(dl && locale !== dl) {
-        changeLocale(dl);
+        changeLocale(dl, window.location.pathname);
     }
 };
 

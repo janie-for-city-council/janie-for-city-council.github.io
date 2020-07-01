@@ -26,6 +26,22 @@
                 "aboutP4": "In 2018 I purchased my first home in the city. I aim to model for my two daughters, Destiny (12) and Kailani (5), that anything is possible. The truth is that it does not have to be this difficult for hardworking families to make ends meet. It’s more important than ever to elect candidates who will fight for excellent schools, small businesses, and investments in affordable housing. I’m running for City Council as a way to continue my advocacy for the people of Pawtucket.",
                 "aboutP4Strong": "Vote for Janie Seguí Rodriguez! Together we can build a better future for our children.",
                 "quote": "The truth is that it does not have to be this difficult for hardworking families to make ends meet. It’s more important than ever to elect candidates who will fight for excellent schools, small businesses, and investments in affordable housing"
+            },
+            "issues": {
+                "title": "Issues",
+                "issues": "Issues"
+            },
+            "news": {
+                "title": "News",
+                "news": "News"
+            },
+            "covid19": {
+                "title": "COVID-19",
+                "covid19": "COVID-19"
+            },
+            "vote": {
+                "title": "Voew",
+                "vote": "Vote"
             }
         }
     },
@@ -45,6 +61,18 @@
                 "switchLanguage": "View in English"
             },
             "home": {
+
+            },
+            "issues": {
+
+            },
+            "news": {
+
+            },
+            "covid19": {
+
+            },
+            "vote": {
 
             }
         }

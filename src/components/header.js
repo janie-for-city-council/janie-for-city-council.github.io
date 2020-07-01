@@ -38,7 +38,7 @@ const Header = ({ locale }) => {
               <FontAwesomeIcon icon={faTimes} size="2x" color="white" />
             </button>
             <Link to="https://secure.actblue.com/donate/seguirodriguezward5" className={c(styles.big, styles.contribute)} locale={locale}>{t('contribute')}</Link>
-            <Link to="/about" locale={locale}>{t('about')}</Link>
+            <Link to="/" locale={locale}>{t('about')}</Link>
             <Link to="/issues" locale={locale}>{t('issues')}</Link>
             <Link to="/news" locale={locale}>{t('news')}</Link>
             <Link to="/covid-19" locale={locale}>{t('covid19')}</Link>

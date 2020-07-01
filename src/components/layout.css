@@ -8,3 +8,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h1 {
+  display: block;
+  background-color: #9DCED4;
+  padding: 5rem 0;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #101240;
+  margin: 0;
+}

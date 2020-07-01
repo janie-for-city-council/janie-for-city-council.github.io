@@ -37,7 +37,7 @@ export default (props) => {
   return (
     <Layout locale={props.pageContext.locale}>
       <SEO title={t('title')} />
-      <div className={styles.meetJanie}>{t('meetJanie')}</div>
+      <h1>{t('meetJanie')}</h1>
       <div className={styles.row}>
         <div className={styles.cell2x}>
           <h3>{t('backgroundIntro')}</h3>
