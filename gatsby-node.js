@@ -9,7 +9,11 @@ exports.onCreatePage = ({ page, actions }) => {
 	// First delete the incoming page that was automatically created by Gatsby
 	// So everything in src/pages/
 	deletePage(page)
+	let localeKeys = ['en'];
 
+	if(!['/404/', '/404.html'].includes(page.path)) {
+		let localeKeys = Object.keys(locales);
+	}
 	// Grab the keys ('en' & 'de') of locales and map over them
 	Object.keys(locales).map(lang => {
 		// Use the values defined in "locales" to construct the path
@@ -32,4 +36,5 @@ exports.onCreatePage = ({ page, actions }) => {
 			},
 		})
 	})
+
 };

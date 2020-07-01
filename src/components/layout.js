@@ -12,10 +12,12 @@ import Header from "./header"
 import "./layout.css"
 import { init } from '../lib/i18n';
 
-const Layout = ({ children, locale, location }) => {
+const Layout = ({ children, locale, location, skipLocaleRedirect }) => {
   useEffect(() => {
-    init(locale, location.pathname);
-  }, [locale, location]);
+    if(!skipLocaleRedirect) {
+      init(locale, location.pathname);
+    }
+  }, [locale, location, skipLocaleRedirect]);
   return (
     <>
       <Header locale={locale} />
