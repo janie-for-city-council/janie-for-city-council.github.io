@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
@@ -13,7 +13,9 @@ import "./layout.css"
 import { init } from '../lib/i18n';
 
 const Layout = ({ children, locale, location }) => {
-  init(locale, location.pathname);
+  useEffect(() => {
+    init(locale, location.pathname);
+  }, [locale, location]);
   return (
     <>
       <Header locale={locale} />
